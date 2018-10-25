@@ -1,0 +1,9 @@
+<h2>All Buildings</h2>
+<ul class="buildings">
+  <li *ngFor="let building of buildings">
+    <a routerLink="/buildings/{{building.id}}">
+      <span class="badge">{{building.id}}</span>{{building.name}}
+    </a>
+  </li>
+</ul>
+

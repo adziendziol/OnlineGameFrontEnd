@@ -1,0 +1,11 @@
+<div *ngIf="building">
+    <h2>{{building.name | uppercase}} Details</h2>
+    <div><span>ID: </span>{{building.id}}</div>
+    <div>
+      <label>Name:
+        <input [(ngModel)]="building.name" placeholder="Name">
+      </label>
+    </div>
+
+  </div>
+<nav><a (click)="goBack()">BACK</a></nav>
