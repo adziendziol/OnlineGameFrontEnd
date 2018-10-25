@@ -1,11 +1,27 @@
 <div *ngIf="building">
-    <h2>{{building.name | uppercase}} Details</h2>
-    <div><span>ID: </span>{{building.id}}</div>
-    <div>
-      <label>Name:
-        <input [(ngModel)]="building.name" placeholder="Name">
-      </label>
-    </div>
-
+  <h2>{{building.name | uppercase}} Details</h2>
+  <div>
+    <span>ID: </span>{{building.id}}
   </div>
+  <div>
+    <label>Name:<input [(ngModel)]="building.name" placeholder="Name"></label>
+  </div>
+  <div>
+    <label>Description:<input [(ngModel)]="building.description" placeholder="Name"></label>
+  </div>
+  <label>Buildingtype:  <select class="form-control"  id="buildingtype"
+    required
+    [(ngModel)]="building.buildingtype" name="buildingtype" >
+      <option *ngFor="let bui of buildingTypes" [value]="bui">{{bui}}</option>
+    </select>
+  </label>
+  <div><label>Created: {{building.createdAt | date: 'yyyy-MM-dd'}}</label></div>
+  <div><label>Updated: {{building.updatedAt | date: 'yyyy-MM-dd'}}</label></div>
+  
+
+
+</div>
+
+<nav><a (click)="save()">SAVE</a></nav>
+
 <nav><a (click)="goBack()">BACK</a></nav>
